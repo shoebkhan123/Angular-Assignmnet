@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="row">
+  <div class="col-3">
+    <div class="side-menu">
+      <ul class="list-group" style="cursor: pointer;">
+        <li [routerLink] = "['/', 'dashboard', 'register']" class="list-group-item">Register</li>
+        <li  [routerLink] = "['/', 'dashboard', 'list']" class="list-group-item">list</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-9">
+    <router-outlet></router-outlet>
+  </div>
+</div>

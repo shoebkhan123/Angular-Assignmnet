@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="text-center mt-3" *ngIf="LISTS.length == 0">
+    <h3> Users not found! </h3>
+    <button [routerLink] = "['/dashboard/register']" class="btn btn-primary btn-small">  Create User </button>
+  </div>
+  <table *ngIf="LISTS.length > 0" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Pnone no</th>
+        <th>City</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let list of LISTS">
+        <td> {{ list.name }} </td>
+        <td> {{ list.email }} </td>
+        <td> {{ list.phonenumbe }} </td>
+        <td> {{ list.city }} </td>
+        <td class="txt-center">
+          <button (click) = "onupdate(list.id)" class="btn btn-primary btn-small m-1">Edit</button>
+          <button  (click) = "onDelete(list.id)" class="btn btn-danger btn-small m-1">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

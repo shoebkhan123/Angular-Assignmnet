@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6 mt-5">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#registration">Registration</a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="login" class="container tab-pane active">
+        <!-- login -->
+        <h3 class="text-center">Login</h3>
+        <div class="card p-3">
+          <form #log="ngForm" (ngSubmit)="onLogin(log.value)">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control"
+              ngModel name="username" required>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" ngModel name="password" required minlength="6">
+            </div>
+            <div class="text-center">
+              <button [disabled]="log.invalid" class="btn btn-primary" type="submit"> Login </button>
+            </div>
+
+          </form>
+
+
+        </div>
+      </div>
+
+      <!-- registration -->
+      <div id="registration" class="container tab-pane fade">
+        <form #reg="ngForm" (ngSubmit)="onRegister(reg.value)">
+          <h3 class="text-center">Registration</h3>
+          <div class="card p-3">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" ngModel name="username" required>
+
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" ngModel name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" ngModel name="password" required minlength="6">
+            </div>
+            <div class="form-group">
+              <label for="confirm-password">Conform password</label>
+              <input type="password" class="form-control" ngModel name="confirmPassword" required minlength="6">
+            </div>
+
+            <div class="text-center">
+              <button [disabled]="reg.invalid" class="btn btn-primary" type="submit"> Register </button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
